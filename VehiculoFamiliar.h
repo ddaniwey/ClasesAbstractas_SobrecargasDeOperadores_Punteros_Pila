@@ -17,6 +17,15 @@ public:
         os << "Marca: " << marca << std::endl;
         os << "Modelo: " << modelo << std::endl;
         os << "Combustible: "<< combustible << std::endl;
+        return os;
+    }
+
+    void consumir(double cantidad) override {
+        if (cantidad > combustible)
+        {
+            throw std::out_of_range("No puedes consumir más de lo que tienes");
+        }
+        combustible-=cantidad;
     }
 
 };

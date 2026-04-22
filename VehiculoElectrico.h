@@ -17,7 +17,10 @@ public:
         return *this;
     }
     // No lo pide pero pongo también el postfijo ++
-    VehiculoElectrico operator++(int){ // int para diferenciar del otro
+    VehiculoElectrico operator++(int){// int para diferenciar del otro
+        VehiculoElectrico copia = *this;
+        nivelDeEnergia = 100;
+        return copia;
     }
 
     std::ostream& imprimir(std::ostream& os) override
@@ -26,6 +29,15 @@ public:
         os <<"Marca: "<< marca << std::endl;
         os <<"Modelo: "<< modelo << std::endl;
         os <<"Nivel de energía: "<< nivelDeEnergia <<"%"<< std::endl;
+        return os;
+    }
+
+    void consumir(double cantidad) override {
+        if (cantidad > nivelDeEnergia)
+        {
+            throw std::out_of_range("No puedes consumir más de lo que tienes");
+        }
+        nivelDeEnergia-=cantidad;
     }
 };
 

@@ -16,6 +16,7 @@ public:
         os << "Vehículo genérico: " << std::endl;
         os << marca << std::endl;
         os << modelo << std::endl;
+        return os;
     }
 
     friend std::ostream& operator<<(std::ostream &os, Vehiculo&v )
@@ -27,4 +28,6 @@ public:
     std::string getModelo() { return modelo; }
     void setMarca(std::string &marc){ marca = marc; }
     void setModelo(std::string &mod) { modelo = mod; }
+
+    virtual void consumir(double cantidad) = 0;
 };
