@@ -14,7 +14,15 @@ public:
 
     void push(std::shared_ptr<T> v)
     {
-        array.push_back(v);
+        if (array.size() <= 1)
+        {
+           //  std::cout<<"Tamaño: "<<array.size()<<std::endl;
+            array.push_back(v);
+        } else
+        {
+            std::cout<<"Aparcamiento completo!!"<<std::endl;
+        }
+
     }
 
     void eliminar(std::shared_ptr<T> v)

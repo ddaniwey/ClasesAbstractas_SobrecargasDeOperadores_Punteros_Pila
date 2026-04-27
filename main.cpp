@@ -63,7 +63,7 @@ int main()
     return 0;
 }
 
-// EXTRA, LO PONGO ABAJO PORQUE NO ES NECESARIO EJECUTARLO PARA LA PRÁTICA
+// EXTRA, LO PONGO ABAJO PORQUE NO ES NECESARIO EJECUTARLO PARA LA PRÁCTICA
 // He conseguido crear una pila de vehiculos, usando un nodo el cual recibe el tipo de vehículos que vamos a meter.
 int ejecutarAparcamientoDeVehiculosFamiliares()
 {
